@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import doctorImg from "../../assets/images/doctor-img02.png";
 import starIcon from "../../assets/images/Star.png";
+import DoctorAbout from "./DoctorAbout";
+import Feedback from "./Feedback";
 
 const DcotorDetails = () => {
+
+    const [tab, setTab] = useState('about')
   return <section>
       <div className="max-w-[1170px] px-5 mx-auto">
         <div className="gird md:grid-cols-3 gap-[50px]">
@@ -36,20 +40,32 @@ const DcotorDetails = () => {
 
             <div className="mt-[50px] border-b border-solid border-[#0066ff34]">
               <button
-              className={"py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold"}
+              onClick={() => setTab("about")}
+              className={'${tab=="about" && "border-b border-solid border-primaryColor"} py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold'}
               >
                 About
-                </button>
+              </button>
 
-                <button
-              className={"py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold"}
+              <button
+                onClick={() => setTab("feedback")}
+                className={'${tab=="feedback" && "border-b border-solid border-primaryColor"} py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold'}
               >
                 Feedback
-                </button>
-
+              </button>
             </div>
 
-          </div>          
+            <div className="mt-[50px]">
+            {
+              tab =='about' && <DoctorAbout/>
+            }
+            {
+              tab =='feedback' && <Feedback/>
+            }
+            </div>
+
+
+          </div>
+                    
           <div></div>
         </div>
       </div>
