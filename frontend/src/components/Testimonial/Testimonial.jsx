@@ -35,7 +35,7 @@ const Testimonial = () => {
                         <img src={patientAvatar} alt=""/>
                         <div>
                             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                             Rohit Sharma
+                             Shubham Kumar Rai (Bihari)
                             </h4>
                             <div className="flex items-center gap-[2px]">
                                 <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -47,7 +47,7 @@ const Testimonial = () => {
                         </div>
                     </div>
                     <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
-                        "I have taken medical services from them. They treat so well and they are providing the best medical services."
+                        "Mai Injection se darr gayiii."
                     </p>
                 </div>
             </SwiperSlide>
