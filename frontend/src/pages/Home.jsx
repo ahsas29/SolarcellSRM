@@ -1,7 +1,5 @@
 import React from "react";
-import heroImg01 from "../assets/images/hero-img01.png";
-import heroImg02 from "../assets/images/hero-img02.png";
-import heroImg03 from "../assets/images/hero-img03.png";
+import heroImg01 from "../assets/images/hero-img01.gif";
 import icon01 from "../assets/images/icon01.png";
 import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
@@ -27,14 +25,12 @@ const Home = () => {
             {/* {===== Hero Content =====} */}
             <div className="lg:w-[570px]">
               <h1 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
-                We help patients live a healthy, longer life.
+              AI-Driven Energy Transition For Solar Industry.
               </h1>
               <p className="text__para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate odit repudiandae deleniti,quae
-                quaerat saepe dolorem quis accusamus distinctio rem ut dolor aliquam ducimus id expedita laboriosam
-                laborum obcaecati impedit at neque quos quisquam facilis!
+              The global demand for sustainable energy solutions has never been more critical. As the world seeks alternatives to traditional solar materials, our project steps into the forefront, aiming to surpass the limitations of existing technologies and contribute to the ongoing renewable energy revolution.
               </p>
-              <button className="btn">Request an Appointment</button>
+              <button className="btn">Learn More</button>
             </div>
             {/* {===== Hero Content Ends =====} */}
 
@@ -42,26 +38,26 @@ const Home = () => {
             <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
               <div>
                 <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
-                  30+
+                  10+
                 </h2>
                 <span className="w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px]"></span>
-                <p className="text__para">Years of Experience</p>
+                <p className="text__para">Journals Published</p>
               </div>
 
               <div>
                 <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
-                  15+
+                  4000+
                 </h2>
                 <span className="w-[100px] h-2 bg-purpleColor rounded-full block mt-[-14px]"></span>
-                <p className="text__para">Clinic Location</p>
+                <p className="text__para">Predefined Datasets</p>
               </div>
 
               <div>
                 <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
-                  100%
+                  98%
                 </h2>
                 <span className="w-[100px] h-2 bg-irisBlueColor rounded-full block mt-[-14px]"></span>
-                <p className="text__para">Patient Satisfaction</p>
+                <p className="text__para">Efficient Model</p>
               </div>
             </div>
             {/* {==========Hero Counter Ends=========} */}
@@ -71,8 +67,8 @@ const Home = () => {
                 <img className="w-full" src={heroImg01} alt="" />
               </div>
               <div className="mt-[30px]">
-                <img src={heroImg02} alt="" className="w-full mb-[30px]" />
-                <img src={heroImg03} alt="" className="w-full" />
+                {/* <img src={heroImg02} alt="" className="w-full mb-[30px]" />
+                <img src={heroImg03} alt="" className="w-full" /> */}
               </div>
             </div>
           </div>
@@ -84,9 +80,9 @@ const Home = () => {
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
             <h2 className="heading text-center">
-              Providing the best medical services.
+              Providing the best solar cell analysis services platform.
             </h2>
-            <p className="text__para text-center">World class for everyone. Our health System offers unmatched, expert health care.</p>
+            <p className="text__para text-center">Our project is dedicated to creating a revolutionary solution, offering top-tier performance and environmental sustainability in the realm of solar energy.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
@@ -97,10 +93,10 @@ const Home = () => {
 
               <div className="mt-[30px]">
                 <h2 className="text [26px] leading-9 text-headingColor font-[700] text-center">
-                  Find a Doctor
+                  Find a Journal
                 </h2>
                 <p className="text [16px] leading-7 text-textColor font-[400] mt-4 text-center">
-                  World-class care for everyone. Our health system offers unmatched, expert health care. From the lab to the clinic.
+                Explore our project, learn about our groundbreaking research, and join us in shaping the future of solar energy.
                 </p>
                 <Link to='/doctors' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
@@ -115,10 +111,10 @@ const Home = () => {
 
               <div className="mt-[30px]">
                 <h2 className="text [26px] leading-9 text-headingColor font-[700] text-center">
-                  Find a Location
+                  Get Services
                 </h2>
                 <p className="text [16px] leading-7 text-textColor font-[400] mt-4 text-center">
-                  World-class care for everyone. Our health system offers unmatched, expert health care. From the lab to the clinic.
+                Similar to world-class medical services, our project promises an unparalleled level of expertise in the field of solar technology.
                 </p>
                 <Link to='/doctors' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
@@ -133,10 +129,10 @@ const Home = () => {
 
               <div className="mt-[30px]">
                 <h2 className="text [26px] leading-9 text-headingColor font-[700] text-center">
-                  Book Appointment
+                  Join Us
                 </h2>
                 <p className="text [16px] leading-7 text-textColor font-[400] mt-4 text-center">
-                  World-class care for everyone. Our health system offers unmatched, expert health care. From the lab to the clinic.
+                Just as quality healthcare is a fundamental right, we believe that access to efficient and eco-friendly solar energy should be available to all.
                 </p>
                 <Link to='/doctors' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
@@ -153,9 +149,9 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our Medical Services</h2>
+            <h2 className="heading text-center">Our Services</h2>
             <p className="text__para text-center">
-              World Class care for everyone. Our health System offers unmatched, expert health care.
+            Our believe in cutting-edge research and a commitment to pushing the boundaries of what's possible in solar technology.
             </p>
           </div>
 
@@ -171,20 +167,20 @@ const Home = () => {
             {/* {===== Feature Content=====} */}
             <div className="xl:w-[670px]">
               <h2 className="heading">
-                Get Virtual treatment<br/> anytime.
+                What we offer.
               </h2>
 
               <ul className="pl-4">
                 <li className="text__para">
-                  1. Schedule the appointment directly.
+                  1. Schedule meeting with the team for your queries.
                 </li>
 
                 <li className="text__para">
-                  2. Search your physician here, and contact their office.
+                  2. Check efficiency of your solar cell structure.
                 </li>
 
                 <li className="text__para">
-                  3. View our physicians who are accepting new patients, use the online scheduling tool to select an appointment time.
+                  3. View our papers and use our tool which is 98% efficient.
                 </li>
               </ul>
               <Link to="/" ><button className="btn">Learn More</button></Link>
@@ -223,7 +219,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our great doctors</h2>
+            <h2 className="heading text-center">Our great team</h2>
             <p className="text__para text-center">
               World Class care for everyone. Our health System offers unmatched, expert health care.
             </p>
@@ -242,7 +238,7 @@ const Home = () => {
               <img src={faqImg} alt=""/>
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="heading">Most asked questions by our beloved patients</h2>
+              <h2 className="heading">Most asked questions</h2>
               <FaqList/>
             </div>
           </div>
@@ -254,9 +250,9 @@ const Home = () => {
       <section>
         <div className="container">
         <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">What our patient say</h2>
+            <h2 className="heading text-center">What our users say</h2>
             <p className="text__para text-center">
-              World Class care for everyone. Our health System offers unmatched, expert health care.
+              World Class tool for everyone. Our System offers unmatched, expert solutions to your problems.
             </p>
           </div>
           <Testimonial/>

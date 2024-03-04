@@ -1,38 +1,20 @@
 export const services = [
   {
-    name: "Cancer Care",
-    desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
+    name: "Service Hub",
+    desc: "We have pioneered a revolutionary approach, eliminating the environmental risks associated with cadmium while enhancing efficiency and stability.",
     bgColor: "rgba(254, 182, 13, .2)",
     textColor: "#FEB60D",
   },
   {
-    name: "Labor & Delivery",
-    desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
+    name: "Design Hub",
+    desc: "Whether you're a homeowner, business, or industry, we offer personalized consultations to design solar solutions that align with your goals and environmental values.",
     bgColor: "rgba(151, 113, 255, .2)",
     textColor: "#9771FF",
   },
   {
-    name: "Heart & Vascular",
-    desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
+    name: "Device Structure",
+    desc: "From regular maintenance to in-depth performance assessments, we ensure that your solar infrastructure operates at peak efficiency, providing you with the best return on investment.",
     bgColor: "rgba(1, 181, 197, .2)",
     textColor: "#01B5C5",
-  },
-  {
-    name: "Mental Health",
-    desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
-    bgColor: "rgba(1, 181, 197, .2)",
-    textColor: "#01B5C5",
-  },
-  {
-    name: "Neurology",
-    desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
-    bgColor: "rgba(254, 182, 13, .2)",
-    textColor: "#FEB60D",
-  },
-  {
-    name: "Burn Treatment",
-    desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
-    bgColor: "rgba(151, 113, 255, .2)",
-    textColor: "#9771FF",
   },
 ];
