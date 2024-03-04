@@ -3,6 +3,7 @@ import doctorImg from "../../assets/images/doctor-img02.png";
 import starIcon from "../../assets/images/Star.png";
 import DoctorAbout from "./DoctorAbout";
 import Feedback from "./Feedback";
+import SidePanel from "./SidePanel";
 
 const DcotorDetails = () => {
 
@@ -37,7 +38,6 @@ const DcotorDetails = () => {
                 </p>
               </div>
             </div>
-
             <div className="mt-[50px] border-b border-solid border-[#0066ff34]">
               <button
               onClick={() => setTab("about")}
@@ -53,20 +53,15 @@ const DcotorDetails = () => {
                 Feedback
               </button>
             </div>
-
             <div className="mt-[50px]">
-            {
-              tab =='about' && <DoctorAbout/>
-            }
-            {
-              tab =='feedback' && <Feedback/>
-            }
+              {tab =='about' && <DoctorAbout />}
+              {tab =='feedback' && <Feedback />}
             </div>
+          </div>       
 
-
+          <div>
+            <SidePanel />
           </div>
-                    
-          <div></div>
         </div>
       </div>
     </section>    
