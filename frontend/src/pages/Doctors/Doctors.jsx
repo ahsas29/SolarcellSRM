@@ -8,7 +8,7 @@ const Doctors = () => {
     <>
       <section className="bg-[#ff9ea]">
         <div className="container text-center">
-          <h2 className="heading"> Find a Doctor</h2>
+          <h2 className="heading"> Find a Journal</h2>
           <div className="max-w-[570px] mt-[30px] mx-auto bg-[#0066ff2c] rounded-md flex items-center justify-between">
             <input
               type="search"
@@ -35,9 +35,9 @@ const Doctors = () => {
   <section>
         <div className="container">
         <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">What our patient say</h2>
+            <h2 className="heading text-center">What our users say</h2>
             <p className="text__para text-center">
-              World Class care for everyone. Our health System offers unmatched, expert health care.
+              World Class tool for everyone. Our System offers unmatched, expert solutions to your problems
             </p>
           </div>
           <Testimonial/>
