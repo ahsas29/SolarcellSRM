@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg01 from "../assets/images/hero-img01.gif";
+import heroImg01 from "../assets/images/hero-img01.png";
 import icon01 from "../assets/images/icon01.png";
 import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
@@ -38,7 +38,7 @@ const Home = () => {
             <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
               <div>
                 <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
-                  10+
+                  50+
                 </h2>
                 <span className="w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px]"></span>
                 <p className="text__para">Journals Published</p>
@@ -193,7 +193,7 @@ const Home = () => {
       {/* {===== FAQ Section Ends=====} */}
 
       {/* {===== Testimonial Section =====} */}
-      <section>
+      {/* <section>
         <div className="container">
         <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">What our users say</h2>
@@ -203,7 +203,7 @@ const Home = () => {
           </div>
           <Testimonial/>
         </div>
-      </section>
+      </section> */}
       {/* {===== Testimonial Section Ends=====} */}
 
     </>

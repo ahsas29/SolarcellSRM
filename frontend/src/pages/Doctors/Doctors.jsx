@@ -13,7 +13,7 @@ const Doctors = () => {
             <input
               type="search"
               className="py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none cursor-pointer placeholder:text-textColor"
-               placeholder="Search Doctor"
+               placeholder="Search Journal"
                />
               <button className="btn mt-0 rounded-[0px] rounded-r-md">
                 Search
@@ -32,7 +32,7 @@ const Doctors = () => {
     </div>
   </section>
 
-  <section>
+  {/* <section>
         <div className="container">
         <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">What our users say</h2>
@@ -42,7 +42,7 @@ const Doctors = () => {
           </div>
           <Testimonial/>
         </div>
-      </section>
+  </section> */}
 
     </>
   );

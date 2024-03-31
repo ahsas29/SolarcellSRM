@@ -1,6 +1,6 @@
 import doctorImg01 from "../images/doctor-img01.jpg";
-import doctorImg02 from "../images/doctor-img02.png";
-import doctorImg03 from "../images/doctor-img02.png";
+import doctorImg02 from "../images/doctor-img02.jpg";
+import doctorImg03 from "../images/doctor-img03.jpg";
 import doctorImg04 from "../images/doctor-img02.png";
 import doctorImg05 from "../images/doctor-img02.png";
 
@@ -10,7 +10,7 @@ export const doctors = [
     name: "Dr. Soumyranjan Routray",
     specialization: "Research Assistant Professor",
     photo: doctorImg01,
-    totalPatients: 6,
+    totalPatients: 10,
     hospital: "SRM Institute of Science and Technology",
   },
   {
