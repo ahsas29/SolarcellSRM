@@ -1,15 +1,15 @@
-import doctorImg01 from "../images/doctor-img01.jpg";
-import doctorImg02 from "../images/doctor-img02.jpg";
-import doctorImg03 from "../images/doctor-img03.jpg";
-import doctorImg04 from "../images/doctor-img04.jpg";
-import doctorImg05 from "../images/doctor-img05.jpg";
+import TeamImg01 from "../images/doctor-img01.jpg";
+import TeamImg02 from "../images/doctor-img02.jpg";
+import TeamImg03 from "../images/doctor-img03.jpg";
+import TeamImg04 from "../images/doctor-img04.jpg";
+import TeamImg05 from "../images/doctor-img05.jpg";
 
 export const doctors = [
   {
     id: "01",
     name: "Dr. Soumyranjan Routray",
     specialization: "Research Assistant Professor",
-    photo: doctorImg01,
+    photo: TeamImg01,
     totalPatients: 10,
     hospital: "SRM Institute of Science and Technology",
   },
@@ -17,7 +17,7 @@ export const doctors = [
     id: "02",
     name: "Dr. P Chandrasekar",
     specialization: "Assistant Professor",
-    photo: doctorImg02,
+    photo: TeamImg02,
     totalPatients: 3,
     hospital: "SRM Institute of Science and Technology",
   },
@@ -25,7 +25,7 @@ export const doctors = [
     id: "03",
     name: "Ahsas Srivastava",
     specialization: "Student",
-    photo: doctorImg03,
+    photo: TeamImg03,
     totalPatients: 4,
     hospital: "SRM Institute of Science and Technology",
   },
@@ -33,7 +33,7 @@ export const doctors = [
     id: "04",
     name: "Raina Karn",
     specialization: "Student",
-    photo: doctorImg04,
+    photo: TeamImg04,
     totalPatients: 4,
     hospital: "SRM Institute of Science and Technology",
   },
@@ -41,7 +41,7 @@ export const doctors = [
     id: "05",
     name: "Aniket Mondal",
     specialization: "Student",
-    photo: doctorImg05,
+    photo: TeamImg05,
     totalPatients: 4,
     hospital: "SRM Institute of Science and Technology",
   },
