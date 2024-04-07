@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import signupImg from "../assets/images/signup.gif";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { BASE_URL } from "../config";
+import { toast } from "react-toastify";
+import HashLoader from "react-spinners/HashLoader";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,14 +15,39 @@ const Signup = () => {
     role: "",
   });
 
+  const navigate = useNavigate();
+
   const handleInputChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     // Handle form submission here
-    console.log(formData); // For demonstration, you can replace this with your form submission logic
+    setLoading(true); // For demonstration, you can replace this with your form submission logic
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const { message } = await res.json();
+
+      if (!res.ok) {
+        throw new Error(message);
+      }
+
+      setLoading(false);
+      toast.success(message);
+      navigate('/login');
+    } catch (err) {
+      toast.error(err.message);
+      setLoading(false);
+    }
+
   };
 
   return (
@@ -28,7 +57,7 @@ const Signup = () => {
           {/* Img Box */}
           <div className="hidden lg:block bg-primaryColor rounded-l-lg">
             <figure className="rounded-l-lg">
-              <img src={signupImg} alt="" className="w-full rounded-l-lg"/>
+              <img src={signupImg} alt="" className="w-full rounded-l-lg" />
             </figure>
           </div>
 
@@ -82,6 +111,7 @@ const Signup = () => {
                     value={formData.role}
                     onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none">
+                    <option value="male">Select</option>
                     <option value="individual">Individual</option>
                     <option value="business">Business</option>
                   </select>
@@ -96,6 +126,7 @@ const Signup = () => {
                     value={formData.gender}
                     onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none">
+                    <option value="male">Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Others</option>
@@ -104,8 +135,8 @@ const Signup = () => {
               </div>
 
               <div className="mt-7">
-                <button type="submit" className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">
-                  Sign Up
+                <button disabled={loading} type="submit" className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">
+                  {loading ? <HashLoader size={35} color="#ffffff" /> : 'Sign Up'}
                 </button>
               </div>
 

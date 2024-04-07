@@ -1,10 +1,10 @@
-import User from "../models/UserSchema.js";
+import Client from "../models/ClientSchema.js";
 
-export const updateUser = async (req, res) => {
+export const updateClient = async (req, res) => {
     const id = req.params.id;
 
     try {
-        const updatedUser = await User.findByIdAndUpdate(
+        const updatedClient = await Client.findByIdAndUpdate(
             id,
             { $set: req.body },
             { new: true }
@@ -13,18 +13,18 @@ export const updateUser = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Successfully updated",
-            data: updatedUser,
+            data: updatedClient,
         });
     } catch (err) {
         res.status(500).json({ success: false, message: "Failed to update" });
     }
 };
 
-export const deleteUser = async (req, res) => {
+export const deleteClient = async (req, res) => {
     const id = req.params.id;
 
     try {
-        await User.findByIdAndDelete(id);
+        await Client.findByIdAndDelete(id);
 
         res.status(200).json({
             success: true,
@@ -35,30 +35,30 @@ export const deleteUser = async (req, res) => {
     }
 };
 
-export const getSingleUser = async (req, res) => {
+export const getSingleClient = async (req, res) => {
     const id = req.params.id;
 
     try {
-        const user = await User.findById(id).select("-password");
+        const client = await Client.findById(id).select("-password");
 
         res.status(200).json({
             success: true,
-            message: "User Found",
-            data: user,
+            message: "Business Found",
+            data: client,
         });
     } catch (err) {
-        res.status(404).json({ success: false, message: "No User found" });
+        res.status(404).json({ success: false, message: "No Business found" });
     }
 };
 
-export const getAllUser = async (req, res) => {
+export const getAllClient = async (req, res) => {
     try {
-        const users = await User.find({}).select("-password");
+        const clients = await Client.find({}).select("-password");
 
         res.status(200).json({
             success: true,
-            message: "Users Found",
-            data: users,
+            message: "Business Found",
+            data: clients,
         });
     } catch (err) {
         res.status(404).json({ success: false, message: "Not found" });

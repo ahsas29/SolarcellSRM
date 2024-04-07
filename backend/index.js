@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRouter from "./Routes/auth.js";
 import userRouter from "./Routes/user.js";
+import clientRouter from "./Routes/client.js";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/clients', clientRouter);
 
 
 // Routes
