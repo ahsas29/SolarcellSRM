@@ -5,7 +5,7 @@ import Signup from "../pages/Signup";
 import Contact from "../pages/Contact";
 import Doctors from "../pages/Doctors/Doctors";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
-import Efficiency from "../pages/ Efficiency.jsx";
+import Efficiency from "../pages/Efficiency.jsx";
 
 import {Routes, Route} from "react-router-dom";
 
