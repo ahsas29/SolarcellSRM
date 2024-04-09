@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import Contact from "../pages/Contact";
 import Doctors from "../pages/Doctors/Doctors";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
+import Efficiency from "../pages/ Efficiency.jsx";
 
 import {Routes, Route} from "react-router-dom";
 
@@ -18,6 +19,7 @@ const Routers = () => {
     <Route path="/contact" element={<Contact />} />
     <Route path="/services" element={<Services />} />
     <Route path="/login" element={<Login />} />
+    <Route path="/efficiency" element={<Efficiency />} />
   </Routes>
 };
 
