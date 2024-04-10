@@ -93,11 +93,11 @@ class Efficiency extends React.Component {
                         <option value="T-Dana">Tail Distribution</option>
                     </select>
                     <input type="text" name="numberOfQuantumWell" value={this.state.numberOfQuantumWell} placeholder="Number of Quantum Well (1-100)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
-                    <input type="text" name="sComposition" value={this.state.sComposition} placeholder="S Composition (0.2, 0.4, 0.6, 0.8)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
+                    <input type="text" name="sComposition" value={this.state.sComposition} placeholder="S Composition (0 - 1.0)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
                     <input type="text" name="ngd" value={this.state.ngd} placeholder="N type gaussian defect (NGD)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
                     <input type="text" name="wgd" value={this.state.wgd} placeholder="Width of gaussian defect (WGD)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
                     <button disabled={loading} type="submit" className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">
-                        {loading ? <HashLoader size={35} color="#ffffff" /> : 'Sign Up'}
+                        {loading ? <HashLoader size={35} color="#ffffff" /> : 'Calculate'}
                     </button>
                 </form>
                 {/* Error message */}
