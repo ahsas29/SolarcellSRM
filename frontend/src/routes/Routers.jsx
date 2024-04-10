@@ -3,7 +3,7 @@ import Services from "../pages/Services";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Contact from "../pages/Contact";
-import Doctors from "../pages/Doctors/Doctors";
+import Structure from "../pages/Doctors/Structure";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
 import Efficiency from "../pages/Efficiency.jsx";
 
@@ -13,7 +13,7 @@ const Routers = () => {
   return <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/home" element={<Home />} />
-    <Route path="/doctors" element={<Doctors />} />
+    <Route path="/structure" element={<Structure />} />
     <Route path="/doctors/:id" element={<DoctorDetails />} />
     <Route path="/register" element={<Signup />} />
     <Route path="/contact" element={<Contact />} />
