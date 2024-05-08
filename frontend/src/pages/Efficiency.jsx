@@ -7,12 +7,12 @@ class Efficiency extends React.Component {
         selectedOption: '',
         numberOfQuantumWell: '',
         sComposition: '',
-        ngd: '',
+        ngd: 12, // Default value for NGD
         wgd: '',
-        result: {}, // New state to store the API response
-        calculationDone: false, // State to track if calculation is done
-        loading: false, // State to track loading state
-        error: null // State to track error
+        result: {},
+        calculationDone: false,
+        loading: false,
+        error: null
     }
 
     handleChange = (event) => {
@@ -21,7 +21,7 @@ class Efficiency extends React.Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        this.setState({ loading: true, error: null }); // Set loading to true when the request starts
+        this.setState({ loading: true, error: null });
         
         const formData = {
             "QW": parseFloat(this.state.numberOfQuantumWell),
@@ -36,70 +36,84 @@ class Efficiency extends React.Component {
 
         try {
             const response = await axios.post(url, formData);
-            console.log("API Response:", response.data);
-
-            // Parsing response and assigning values
             const [ISC, JSC, VOC, FF, Efficiency] = response.data.efficiency;
             const result = { ISC, JSC, VOC, FF, Efficiency };
             this.setState({ result, calculationDone: true, loading: false });
         } catch (error) {
             console.error("API Error:", error);
-            // Set error state if there's an error
             this.setState({ error: "An error occurred. Please try again later.", loading: false });
         }
     }
 
     render() {
-        const { result, calculationDone, loading, error } = this.state;
+        const { result, calculationDone, loading, error, selectedOption, ngd } = this.state;
+        const isGaussian = selectedOption === 'G-Dana';
+        const ngdLabel = isGaussian ? 'NGD (10<sup>12</sup> - 10<sup>19</sup>)' : 'NTD (10<sup>12</sup> - 10<sup>19</sup>)';
+
         return (
             <div className="container mx-auto px-4">
                 <h2 className="text-center text-headingColor text-4xl font-bold my-8">
                     Welcome to Solar Cell Efficiency Calculator 🌞
                 </h2>
-                <div className="flex flex-col items-center justify-center mb-8">
-                    <div className="mb-4">
-                        <h3 className="font-bold mb-2 text-center">1. Gaussian Distribution:</h3>
-                        <p className="text-center">A statistical distribution characterized by a bell-shaped curve.</p>
-                    </div>
-                    <div className="mb-4">
-                        <h3 className="font-bold mb-2 text-center">2. Tail Distribution:</h3>
-                        <p className="text-center">A type of probability distribution that has a longer tail at one end than the other.</p>
-                    </div>
-                    <div className="mb-4">
-                        <h3 className="font-bold mb-2 text-center">3. Quantum Well:</h3>
-                        <p className="text-center">The potential well for the motion of an electron in a semiconductor crystal, which is quantized.</p>
-                    </div>
-                    <div className="mb-4">
-                        <h3 className="font-bold mb-2 text-center">4. S-Composition:</h3>
-                        <p className="text-center">The composition ratio of sulfur in the material.</p>
-                    </div>
-                    <div className="mb-4">
-                        <h3 className="font-bold mb-2 text-center">5. Total Density of Acceptor-like & Donor-like States for Gaussian Distribution (NGD):</h3>
-                        <p className="text-center">The combined density of acceptor-like and donor-like states for Gaussian distribution.</p>
-                    </div>
-                    <div className="mb-8">
-                        <h3 className="font-bold mb-2 text-center">6. Characteristics of Decay Energy (WGD):</h3>
-                        <p className="text-center">The properties of decay energy, which determine the decay behavior of a system.</p>
-                    </div>
-                </div>
-                <h2 className="text-center text-headingColor text-4xl font-bold my-8">
-                    Enter your desired values 🌞
-                </h2>
-
+                
                 <form onSubmit={this.handleSubmit} className="max-w-[570px] mx-auto rounded-lg shadow-md md:p-10">
-                    <select name="selectedOption" value={this.state.selectedOption} onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }}>
+                    <select 
+                        name="selectedOption" 
+                        value={this.state.selectedOption} 
+                        onChange={this.handleChange} 
+                        className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" 
+                        style={{ marginBottom: '10px' }}>
                         <option value="">Select The type of Distribution</option>
                         <option value="G-Dana">Gaussian Distribution</option>
                         <option value="T-Dana">Tail Distribution</option>
                     </select>
-                    <input type="text" name="numberOfQuantumWell" value={this.state.numberOfQuantumWell} placeholder="Number of Quantum Well (1-100)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
-                    <input type="text" name="sComposition" value={this.state.sComposition} placeholder="S Composition (0 - 1.0)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
-                    <input type="text" name="ngd" value={this.state.ngd} placeholder="N type gaussian defect (NGD)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
-                    <input type="text" name="wgd" value={this.state.wgd} placeholder="Width of gaussian defect (WGD)" onChange={this.handleChange} className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" style={{ marginBottom: '10px' }} />
+                    <input 
+                        type="text" 
+                        name="numberOfQuantumWell" 
+                        value={this.state.numberOfQuantumWell} 
+                        placeholder="Number of Quantum Well (1-100)" 
+                        onChange={this.handleChange} 
+                        className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" 
+                        style={{ marginBottom: '10px' }} 
+                    />
+                    <input 
+                        type="text" 
+                        name="sComposition" 
+                        value={this.state.sComposition} 
+                        placeholder="S/Se Composition (0 - 1.0)" 
+                        onChange={this.handleChange} 
+                        className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" 
+                        style={{ marginBottom: '10px' }} 
+                    />
+                    <div className="flex items-center">
+                        <input 
+                            type="range" 
+                            name="ngd" 
+                            min="12" 
+                            max="19" 
+                            step="1" 
+                            value={ngd} 
+                            onChange={this.handleChange} 
+                            className="flex-grow px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" 
+                            style={{ marginBottom: '10px' }} 
+                        />
+                        <span className="text-headingColor text-[22px] leading-7 ml-4">10<sup>{ngd}</sup></span>
+                    </div>
+                    <label htmlFor="ngd" dangerouslySetInnerHTML={{ __html: ngdLabel }}></label>
+                    <input 
+                        type="text" 
+                        name="wgd" 
+                        value={this.state.wgd} 
+                        placeholder="Width of gaussian defect (WGD)" 
+                        onChange={this.handleChange} 
+                        className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer" 
+                        style={{ marginBottom: '10px' }} 
+                    />
                     <button disabled={loading} type="submit" className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">
                         {loading ? <HashLoader size={35} color="#ffffff" /> : 'Calculate'}
                     </button>
                 </form>
+                
                 {/* Error message */}
                 {error && <p className="text-center text-red-500">{error}</p>}
                 

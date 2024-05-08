@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <section>
       <div className="px-4 mx-auto max-w-screen-md">
-        <h2 className="heading text-center">Contact Us</h2>
+        <h2 className="heading text-center">Collaborate With Us</h2>
         <p className="mb-8 lg:mb-16 font-light text-center text__para">
-          Got a technical issue? Want to send feedback about a feature? Let us know.
+          Got your own structure? Want to send feedback about a feature? Let us know.
         </p>
         <form action="#" className="space-y-8">
           <div>

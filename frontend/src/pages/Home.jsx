@@ -93,12 +93,12 @@ const Home = () => {
 
               <div className="mt-[30px]">
                 <h2 className="text [26px] leading-9 text-headingColor font-[700] text-center">
-                  Find a Journal
+                  Proposed Structure
                 </h2>
                 <p className="text [16px] leading-7 text-textColor font-[400] mt-4 text-center">
                 Explore our project, learn about our groundbreaking research, and join us in shaping the future of solar energy.
                 </p>
-                <Link to='' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
+                <Link to='/structure' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
                 </Link>
               </div>
@@ -116,7 +116,7 @@ const Home = () => {
                 <p className="text [16px] leading-7 text-textColor font-[400] mt-4 text-center">
                 Similar to world-class medical services, our project promises an unparalleled level of expertise in the field of solar technology.
                 </p>
-                <Link to='/doctors' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
+                <Link to='/services' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
                 </Link>
               </div>
@@ -134,7 +134,7 @@ const Home = () => {
                 <p className="text [16px] leading-7 text-textColor font-[400] mt-4 text-center">
                 Just as quality healthcare is a fundamental right, we believe that access to efficient and eco-friendly solar energy should be available to all.
                 </p>
-                <Link to='/doctors' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
+                <Link to='/contact' className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
                 </Link>
               </div>
