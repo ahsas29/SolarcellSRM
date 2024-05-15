@@ -18,7 +18,7 @@ export const doctors = [
     name: "Dr. P Chandrasekar",
     specialization: "Assistant Professor",
     photo: TeamImg02,
-    totalPatients: 3,
+    totalPatients: 7,
     hospital: "SRM Institute of Science and Technology",
   },
   {
